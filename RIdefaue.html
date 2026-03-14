@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPositório de RI</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #1a5276;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            background-color: #2e86c1;
+            padding: 1em;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+        .search-bar {
+            margin-bottom: 2em;
+            text-align: center;
+        }
+        .search-bar input {
+            padding: 0.5em;
+            width: 50%;
+            font-size: 1em;
+        }
+        .section h2 {
+            color: #1a5276;
+        }
+        .item {
+            background-color: white;
+            padding: 1em;
+            margin: 0.5em 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #1a5276;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CARIAP - Repositório de RI</h1>
+        <p>Recursos para estudantes e professores do curso de RI da Unifap</p>
+    </header>
+    <nav>
+        <a href="#materiais">Materiais</a>
+        <a href="#pesquisas">Pesquisas</a>
+        <a href="#comunicacao">Comunicação</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder=""Pesquisar materiais, pesquisas, notícias ou eventos...">
+        </div>
+        <div class="section" id="materiais">
+            <h2>Materiais de Disciplinas</h2>
+            <div class="item">
+                <h3>Ementa: Teoria de Relações Internacionais I</h3>
+                <p>PDF com a ementa oficial e bibliografia recomendada.</p>
+                <a href="#">Baixar PDF </a>
+            </div>
+            <div class="item">
+                <h3>Resumo:Economia Internacional</h3>
+                <p>Resumo colaborativo dos alunos do 3° semestre.</p>
+                <a href="#">Baixar PDF</a>
+            </div>
+            <div class="section" id="pesquisas">
+                <h2>Pesquisas Acadêmicas e TCCs</h2>
+                <div class="item">
+                    <h3>TCC: A Política Externa Brasileira no Século XXI</h3>
+                    <p>Autor: Nome do Aluno | Ano: 2024</p>
+                    <a href="#">Baixar PDF</a>
+                </div>
+            </div>
+            <div class="section" id="comunicacao">
+                <h2>Comunicação do CARIAP</h2>
+                <div class="item">
+                    <h3>Relatório Financeiro - 1° Semestre 2025</h3>
+                    <p>Transparência das contas do CARIAP.</p>
+                    <a href="#">Ver Relatório</a>
+                </div>
+                <div class="item">
+                    <h3>Convocação para Assembleia</h3>
+                    <p>Data: 10/06/2025 | Local: Auditório da Unifap</p>
+                    <a href="#">Ver Detalhes</a>
+                </div>
+            </div>
+            <div class="section" id="eventos">
+                <h2>Eventos</h2>
+                <div class="item">
+                    <h3>Semana de RI 2025</h3>
+                    <p>Evento com palestras e workshops. Inscreva-se!</p>
+                    <a href="#">Ver Programação</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>CARIAP - Centro Acadêmico de Relações Internacionais | Unifap 2025</p>
+            <p>Contato: cariap@unifap.br | Instagram: @cariap</p>
+        </footer>
+        <script>
+            // Função simples de busca (expansível com Fuse.js)
+            document.getElementById('search').addEventListener('input', function(e) {
+                let searchTerm = e.target.value.toLowerCase();
+                let items = document.querySelectorALL('.item');
+                items.forEach(item => {
+                    let text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(searchTerm) ? 'block' : 'none';  
+                })
+            })
+        </script>
+</body>
+</html>
